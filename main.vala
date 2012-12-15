@@ -408,10 +408,10 @@ private void save_file(string[]? _raw_path = null) {
         var com =masterstate.getPlayerCompany();
 		string  save_string =com.getName()+"\n"+com.Money().to_string()+"\n"+masterstate.getTime().to_string()+"\n";
 		save_string +=com._karma.to_string()+"\n";
-		if (com.employee.size==0){save_string+="-1\n";}else{
-		save_string +=masterstate.getPlayerCompany().employee.size.to_string()+"\n"+masterstate.getPeopleDisplay();}
-		if (com.projects.size==0){save_string+="-1\n";}else{
-		save_string +=masterstate.getPlayerCompany().projects.size.to_string()+"\n"+masterstate.getProjectsDisplay();}
+		if (masterstate.personas.size==0){save_string+="-1\n";}else{
+		save_string +=masterstate.personas.size.to_string()+"\n"+masterstate.getPeopleDisplay();}
+		if (masterstate.projects.size==0){save_string+="-1\n";}else{
+		save_string +=masterstate.projects.size.to_string()+"\n"+masterstate.getProjectsDisplay();}
 		if (com.employee.size==0){save_string+="-1\n";}else{
 		save_string +=com.employee.size.to_string()+"\n" + com.getEmplyeeDisplay();}
 		if (com.projects.size==0){save_string+="-1\n";}else{
