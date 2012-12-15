@@ -26,3 +26,8 @@ Erzeugung zB :
                 }
             
             this.text_view.buffer.text ="NEW gedrückt "+outtext;
+
+/*************************Positions index finden aus Liste ******************/
+	z.B. 
+	var pos = liste.index_of(variable) 
+	liste.remove_at(pos);
