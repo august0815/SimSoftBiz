@@ -84,15 +84,13 @@ public int getOverheadCost() {
 	return overhead;
 	}
 
-public void doSoftwareWrite(int time){
+public void doSoftwareWrite(){
 		
 		if (projects.size>0){
-			int pos=0;
 		var sloc_per_Project =totsloc/projects.size;
 
 			foreach (AbstractProject p in projects) {
-					var id= p.attributes[0] as ProjectNr;
-			        var n = p.attributes[1] as Umfang;
+					var n = p.attributes[1] as Umfang;
 			        var o = p.attributes[2] as Status;
                     var f = p.attributes[3] as Fertig;
                     var nn =n.umfang;
@@ -102,14 +100,38 @@ public void doSoftwareWrite(int time){
 				}else
 				{f.fertig=true;}
 				}
-				if (((f.fertig)) || (o.status>nn)){
-					addSoftware_for_sale(id.projectnr,10,time,0);
-					projects.remove_at (pos);
 				}
+				
+	}
+	
+}
+public void software_build(int time){
+			int pos=0;
+			int max=1000; //sloc lines of created projects
+			int preis=0;
+			foreach (AbstractProject p in projects) {
+					var id= p.attributes[0] as ProjectNr;
+					var n = p.attributes[1] as Umfang;
+			        var f = p.attributes[3] as Fertig;
+			        var nn=n.umfang;
+			        var r1=max/4;
+			        //4 Preis Cluster
+			        if ((nn>100) && (nn<250))
+						{ preis=Random.int_range(1,20);}
+				    if ((nn>250) && (nn<500))
+						 {preis=Random.int_range(3,30);}
+			        if ((nn>500) && (nn<750))
+						{ preis=Random.int_range(5,40);}
+			        if ((nn>750) && (nn<1000))
+						 {preis=Random.int_range(8,50);}	
+			if (f.fertig){
+					addSoftware_for_sale(id.projectnr,preis,time,0);
+					projects.remove_at (pos);
+					return;
 				}
 			pos ++;
+			}
 	}
-}
    public void addSoftware_for_sale(int nr ,int preis ,int alter,int sold)
   {	
             product.add(new StubProduct (nr,preis,alter,sold));
@@ -221,7 +243,7 @@ public int getSoftware_sale(int time) {
 	var divider=1.25;
 	int verkauft=0;
 	int anzahl;
-	int preis;
+	//int preis;
 	if (product.size>0){
 			foreach (AbstractProduct p in product) {
 			 
@@ -229,18 +251,15 @@ public int getSoftware_sale(int time) {
 			       var n= p.attributes[1] as Preis;
 			        var m = p.attributes[2] as Alter;
 			        var s=p.attributes[3] as Sold;
-			      var r1= (int) (200-((time-m.alter))/divider);
+			      var r1= (int) (100-((time-m.alter))/divider);
 			      if (r1<0)
 					{r1=3;}
 			         anzahl=Random.int_range(3,r1);
 			         s.sold=anzahl;
-                  preis =Random.int_range(-3,5);
+                  //preis =Random.int_range(-3,5);
                     if (n != null)
-                     verkauft +=(n.preis+preis)*anzahl;
+                     verkauft +=((n.preis/10))*anzahl;
                 }
-	
-			
-			
 		}
 		_money += verkauft;
 	return verkauft;

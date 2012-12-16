@@ -428,7 +428,8 @@ private void save_file(string[]? _raw_path = null) {
 			}
 public void oneDayForward(){
 			masterstate.advanceTime(1);
-			masterstate.getPlayerCompany().doSoftwareWrite(masterstate.getTime());
+			masterstate.getPlayerCompany().doSoftwareWrite();
+			masterstate.getPlayerCompany().software_build(masterstate.getTime());
             tree_projecte_display();
 			tree_bewerber_display();
 			tree_angestellte_display();
@@ -626,7 +627,7 @@ private void setup_tree_software (TreeView view){
 	listmodel_software.clear();
 	view.insert_column_with_attributes (-1, " Nummer", new
 	CellRendererText (), "text", 0);
-	view.insert_column_with_attributes (-1, " Preis", new
+	view.insert_column_with_attributes (-1, " Preis*10", new
 	CellRendererText (), "text", 1);
 	view.insert_column_with_attributes (-1, " Alter", new
 	CellRendererText (), "text", 2);
