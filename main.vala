@@ -1,5 +1,6 @@
 using Gtk;
 using Gee;
+using Json;
 
 public class MainWindow : Window {
 	private Gtk.Builder builder;
@@ -398,28 +399,180 @@ try {
 private void save_file(string[]? _raw_path = null) {
 			if(_raw_path != null) {
 				string filename = _raw_path[_raw_path.length-1];
-				var file = File.new_for_path (filename);
+				var file = File.new_for_path (filename+".simbiz");
+				string file_json=filename+".json";
+				var bld =new Json.Builder();
+				var gen = new Json.Generator ();
 	try {
         // delete if file already exists
         if (file.query_exists ()) {
             file.delete ();
         }
-          var dos = new DataOutputStream (file.create (FileCreateFlags.REPLACE_DESTINATION));
+        var dos = new DataOutputStream (file.create (FileCreateFlags.REPLACE_DESTINATION));
         var com =masterstate.getPlayerCompany();
 		string  save_string =com.getName()+"\n"+com.Money().to_string()+"\n"+masterstate.getTime().to_string()+"\n";
-		save_string +=com._karma.to_string()+"\n";
-		if (masterstate.personas.size==0){save_string+="-1\n";}else{
-		save_string +=masterstate.personas.size.to_string()+"\n"+masterstate.getPeopleDisplay();}
-		if (masterstate.projects.size==0){save_string+="-1\n";}else{
-		save_string +=masterstate.projects.size.to_string()+"\n"+masterstate.getProjectsDisplay();}
-		if (com.employee.size==0){save_string+="-1\n";}else{
-		save_string +=com.employee.size.to_string()+"\n" + com.getEmplyeeDisplay();}
-		if (com.projects.size==0){save_string+="-1\n";}else{
-		save_string +=com.projects.size.to_string()+"\n"+com.getProjectsDisplay();}
-		if (com.product.size==0){save_string+="-1\n";}else{
-		save_string +=com.product.size.to_string()+"\n"+com.getSoftware();}
+		bld.begin_array();
+		bld.begin_object();
+        bld.set_member_name ("CompanyName");
+        bld.add_string_value(com.getName());
+        bld.set_member_name ("Money");
+        bld.add_int_value(com.Money());
+        bld.set_member_name ("Time");
+        bld.add_int_value(masterstate.getTime());
+        save_string +=com._karma.to_string()+"\n";
+		bld.set_member_name ("Karma");
+        bld.add_int_value(com._karma);
+		bld.end_object(); 
+		  
+		if (masterstate.personas.size==0){save_string+="-1\n";
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Bewerber");
+				bld.add_int_value(-1);
+				bld.end_object();
+		}else{
+		save_string +=masterstate.personas.size.to_string()+"\n"+masterstate.getPeopleDisplay();
+		 var pers =masterstate.getPerson();
+			bld.begin_object();
+				bld.set_member_name ("Anzahl Bewerber");
+				bld.add_int_value(pers.size);
+				bld.end_object();
+           foreach (AbstractPersona p in pers) {
+			   bld.begin_object();
+                    var ii =p.attributes[0]	as Ident;
+                    var n =p.attributes[1] as Name ;		
+                    var v =p.attributes[2] as Vorname ;
+                    var m =p.attributes[3] as Money ;
+                    var s =p.attributes[6]	as Skill;
+					bld.set_member_name ("Id");
+					bld.add_int_value(ii.id);
+					bld.set_member_name ("Name");
+					bld.add_string_value(n.name);
+					bld.set_member_name ("Vorname");
+					bld.add_string_value(v.vorname);
+					bld.set_member_name ("Money");
+					bld.add_int_value(m.money);
+					bld.set_member_name ("Skill");
+					bld.add_int_value(s.skill);
+					bld.end_object();
+             }
+           
+             }
+             
+		if (masterstate.projects.size==0){save_string+="-1\n";
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Projecte");
+				bld.add_int_value(-1);
+				bld.end_object();}else{
+		save_string +=masterstate.projects.size.to_string()+"\n"+masterstate.getProjectsDisplay();
+				var proj =masterstate.getProjects();
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Projecte");
+				bld.add_int_value(proj.size);
+				bld.end_object();
+				foreach (AbstractProject p in proj) {
+					bld.begin_object();
+                      var n =p.attributes[0] as ProjectNr ;		
+                    var v =p.attributes[1] as Umfang ;
+         			bld.set_member_name ("ProjectNr");
+					bld.add_int_value(n.projectnr);
+					bld.set_member_name ("Umfang");
+					bld.add_int_value(v.umfang);
+					bld.end_object();
+             }
+           
+		}
+		
+		if (com.employee.size==0){save_string+="-1\n";
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Beschäftigte");
+				bld.add_int_value(-1);
+				bld.end_object();
+				}else{
+		save_string +=com.employee.size.to_string()+"\n" + com.getEmplyeeDisplay();
+		var pers =com.getEmployee();
+			bld.begin_object();
+				bld.set_member_name ("Anzahl Beschäftigte");
+				bld.add_int_value(pers.size);
+				bld.end_object();
+           foreach (AbstractPersona p in pers) {
+			   bld.begin_object();
+                    var ii =p.attributes[0]	as Ident;
+                    var n =p.attributes[1] as Name ;		
+                    var v =p.attributes[2] as Vorname ;
+                    var m =p.attributes[3] as Money ;
+                    var s =p.attributes[6]	as Skill;
+					bld.set_member_name ("Id");
+					bld.add_int_value(ii.id);
+					bld.set_member_name ("Name");
+					bld.add_string_value(n.name);
+					bld.set_member_name ("Vorname");
+					bld.add_string_value(v.vorname);
+					bld.set_member_name ("Money");
+					bld.add_int_value(m.money);
+					bld.set_member_name ("Skill");
+					bld.add_int_value(s.skill);
+					bld.end_object();
+             }
+             }
+		if (com.projects.size==0){save_string+="-1\n";
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Projecte in Arbeit");
+				bld.add_int_value(-1);
+				bld.end_object();}else{
+		save_string +=com.projects.size.to_string()+"\n"+com.getProjectsDisplay();
+				var proj =com.getProjects();
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Projecte");
+				bld.add_int_value(proj.size);
+				bld.end_object();
+				foreach (AbstractProject p in proj) {
+					bld.begin_object();
+                      var n =p.attributes[0] as ProjectNr ;		
+                    var v =p.attributes[1] as Umfang ;
+                    var f = p.attributes[3] as Fertig;
+         			bld.set_member_name ("ProjectNr");
+					bld.add_int_value(n.projectnr);
+					bld.set_member_name ("Umfang");
+					bld.add_int_value(v.umfang);
+					bld.set_member_name ("Fertig");
+					bld.add_boolean_value(f.fertig);
+					bld.end_object();
+             }
+             }
+		if (com.product.size==0){save_string+="-1\n";
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Software");
+				bld.add_int_value(-1);
+				bld.end_object();}else{
+		save_string +=com.product.size.to_string()+"\n"+com.getSoftware();
+				var soft =com.getProdukt();
+				bld.begin_object();
+				bld.set_member_name ("Anzahl Software");
+				bld.add_int_value(soft.size);
+				bld.end_object();
+				foreach (AbstractProduct p in soft) {
+					bld.begin_object();
+					var ii =p.attributes[0]	as ProductNr;
+                    var n =p.attributes[1] as Preis ;		
+                    var v =p.attributes[2] as Alter ;
+                     var s =p.attributes[3] as Sold ;
+         			bld.set_member_name ("ProjectNr");
+					bld.add_int_value(ii.productnr);
+					bld.set_member_name ("Preis");
+					bld.add_int_value(n.preis);
+					bld.set_member_name ("Alter");
+					bld.add_int_value(v.alter);
+					bld.set_member_name ("Sold");
+					bld.add_int_value(s.sold);
+					bld.end_object();
+             }
+					}
+		 bld.end_array();
         dos.put_string (save_string);
-
+		gen.set_pretty(true);
+		 var node =bld.get_root();
+       gen.set_root(node);
+       gen.to_file(file_json);
 } catch (Error e) {
     stderr.printf ("Error: %s\n", e.message);
 }
