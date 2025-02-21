@@ -1,3 +1,5 @@
+mit KI
+
 # Code-Analyse der Simulationsdateien
 
 In dieser Analyse werden zwei zentrale Dateien des Simulationssystems untersucht: **market_simulation.py** und **master_state.py**. Beide Dateien sind Teil einer größeren Anwendung, in der noch weitere Module verwendet werden (z. B. Person, Project, Product, Company). Hier liegt der Fokus auf der Markt- und Zustandslogik.
