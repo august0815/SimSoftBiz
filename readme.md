@@ -1,3 +1,5 @@
+mit KI-Hilfe
+
 # Software Business Simulator
 
 Ein Simulationsprojekt, das wirtschaftliche Prozesse in einem dynamischen Marktumfeld realitätsnah abbildet. Das Projekt modelliert Unternehmensaktivitäten, Mitarbeitergewinnung, Projektmanagement, Produktentwicklung und Verkauf, indem es Marktdynamiken sowie zufällige Ereignisse integriert.
