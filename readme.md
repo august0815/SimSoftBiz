@@ -111,7 +111,7 @@ def add_employee(self, person):
 Das Projekt kann direkt über Python gestartet werden. Die Hauptsimulation wird in der Regel über das Modul `master_state.py` gesteuert, welches den Simulationszyklus initialisiert und fortführt.
 
 ```bash
-python simulation/master_state.py
+python simulation/app.py
 ```
 
 ## Beitrag leisten
