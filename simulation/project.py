@@ -2,8 +2,8 @@
 import random
 
 class Project:
-    def __init__(self, pid, scope, status="in progress", age=0, label=None, category=None):
-        self.id = pid
+    def __init__(self, id, scope, status="in progress", age=0, label=None, category=None):
+        self.id = id
         self.scope = scope
         self.status = status
         self.age = age

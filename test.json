@@ -1,0 +1,532 @@
+{
+    "time": 787,
+    "company": {
+        "name": "Software Biz Sim",
+        "money": 348572,
+        "karma": 12,
+        "employees": [
+            {
+                "pid": -1,
+                "name": "CEO",
+                "firstname": "Himself",
+                "money": 100000,
+                "skill": 10,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 787,
+                "skills": {
+                    "webentwicklung": 10,
+                    "mobile entwicklung": 10,
+                    "datenbankentwicklung": 10,
+                    "sicherheitsentwicklung": 10,
+                    "ki-entwicklung": 10,
+                    "allgemeine programmierung": 10
+                }
+            },
+            {
+                "pid": 1697,
+                "name": "Jackson",
+                "firstname": "Brianna",
+                "money": 43306,
+                "skill": 94,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 212,
+                "skills": {
+                    "webentwicklung": 49,
+                    "mobile entwicklung": 77,
+                    "datenbankentwicklung": 0,
+                    "sicherheitsentwicklung": 80,
+                    "ki-entwicklung": 62,
+                    "allgemeine programmierung": 94
+                }
+            },
+            {
+                "pid": 7498,
+                "name": "Thomas",
+                "firstname": "Joseph",
+                "money": 62507,
+                "skill": 62,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 208,
+                "skills": {
+                    "webentwicklung": 76,
+                    "mobile entwicklung": 64,
+                    "datenbankentwicklung": 78,
+                    "sicherheitsentwicklung": 65,
+                    "ki-entwicklung": 97,
+                    "allgemeine programmierung": 62
+                }
+            },
+            {
+                "pid": 3572,
+                "name": "Thomas",
+                "firstname": "Joseph",
+                "money": 54831,
+                "skill": 95,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 207,
+                "skills": {
+                    "webentwicklung": 96,
+                    "mobile entwicklung": 58,
+                    "datenbankentwicklung": 76,
+                    "sicherheitsentwicklung": 37,
+                    "ki-entwicklung": 84,
+                    "allgemeine programmierung": 95
+                }
+            },
+            {
+                "pid": 9504,
+                "name": "Johnson",
+                "firstname": "Jeremy",
+                "money": 38806,
+                "skill": 66,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 207,
+                "skills": {
+                    "webentwicklung": 96,
+                    "mobile entwicklung": 84,
+                    "datenbankentwicklung": 95,
+                    "sicherheitsentwicklung": 34,
+                    "ki-entwicklung": 93,
+                    "allgemeine programmierung": 66
+                }
+            },
+            {
+                "pid": 5295,
+                "name": "Anderson",
+                "firstname": "Elizabeth",
+                "money": 55938,
+                "skill": 86,
+                "age": 2,
+                "motivation": 100,
+                "employment_duration": 194,
+                "skills": {
+                    "webentwicklung": 90,
+                    "mobile entwicklung": 87,
+                    "datenbankentwicklung": 93,
+                    "sicherheitsentwicklung": 87,
+                    "ki-entwicklung": 84,
+                    "allgemeine programmierung": 86
+                }
+            },
+            {
+                "pid": 3503,
+                "name": "Martinez",
+                "firstname": "Daniel",
+                "money": 40239,
+                "skill": 55,
+                "age": 1,
+                "motivation": 100,
+                "employment_duration": 180,
+                "skills": {
+                    "webentwicklung": 51,
+                    "mobile entwicklung": 48,
+                    "datenbankentwicklung": 72,
+                    "sicherheitsentwicklung": 77,
+                    "ki-entwicklung": 93,
+                    "allgemeine programmierung": 55
+                }
+            },
+            {
+                "pid": 1820,
+                "name": "Brown",
+                "firstname": "William",
+                "money": 76699,
+                "skill": 68,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 148,
+                "skills": {
+                    "webentwicklung": 48,
+                    "mobile entwicklung": 100,
+                    "datenbankentwicklung": 92,
+                    "sicherheitsentwicklung": 2,
+                    "ki-entwicklung": 92,
+                    "allgemeine programmierung": 68
+                }
+            },
+            {
+                "pid": 1370,
+                "name": "Wilson",
+                "firstname": "David",
+                "money": 76394,
+                "skill": 46,
+                "age": 1,
+                "motivation": 100,
+                "employment_duration": 46,
+                "skills": {
+                    "webentwicklung": 88,
+                    "mobile entwicklung": 94,
+                    "datenbankentwicklung": 83,
+                    "sicherheitsentwicklung": 36,
+                    "ki-entwicklung": 88,
+                    "allgemeine programmierung": 46
+                }
+            },
+            {
+                "pid": 7876,
+                "name": "Wilson",
+                "firstname": "Maria",
+                "money": 51096,
+                "skill": 62,
+                "age": 0,
+                "motivation": 100,
+                "employment_duration": 45,
+                "skills": {
+                    "webentwicklung": 48,
+                    "mobile entwicklung": 60,
+                    "datenbankentwicklung": 90,
+                    "sicherheitsentwicklung": 68,
+                    "ki-entwicklung": 63,
+                    "allgemeine programmierung": 62
+                }
+            }
+        ],
+        "projects": [
+            {
+                "id": 5495,
+                "scope": 12,
+                "status": "in progress",
+                "age": 0,
+                "label": "newversion",
+                "category": "Sicherheitsentwicklung"
+            },
+            {
+                "id": 6426,
+                "scope": 30,
+                "status": "in progress",
+                "age": 0,
+                "label": "newversion",
+                "category": "Webentwicklung"
+            },
+            {
+                "id": 3538,
+                "scope": 66,
+                "status": "in progress",
+                "age": 0,
+                "label": "newversion",
+                "category": "Datenbankentwicklung"
+            },
+            {
+                "id": 1647,
+                "scope": 3,
+                "status": "in progress",
+                "age": 2,
+                "label": null,
+                "category": "Webentwicklung"
+            },
+            {
+                "id": 35,
+                "scope": 109,
+                "status": "in progress",
+                "age": 0,
+                "label": null,
+                "category": "Webentwicklung"
+            }
+        ],
+        "finished_products": [
+            {
+                "product_id": 1135,
+                "price": 40,
+                "age": 499,
+                "sold": 28,
+                "in_maintenance": false,
+                "since_bugfix": 49,
+                "since_revision": 19,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 5432,
+                "price": 48,
+                "age": 499,
+                "sold": 33,
+                "in_maintenance": false,
+                "since_bugfix": 49,
+                "since_revision": 19,
+                "genre": "Webentwicklung"
+            },
+            {
+                "product_id": 4610,
+                "price": 40,
+                "age": 499,
+                "sold": 33,
+                "in_maintenance": false,
+                "since_bugfix": 49,
+                "since_revision": 19,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 9937,
+                "price": 62,
+                "age": 495,
+                "sold": 24,
+                "in_maintenance": false,
+                "since_bugfix": 45,
+                "since_revision": 15,
+                "genre": "Mobile Entwicklung"
+            },
+            {
+                "product_id": 2724,
+                "price": 62,
+                "age": 495,
+                "sold": 21,
+                "in_maintenance": false,
+                "since_bugfix": 45,
+                "since_revision": 15,
+                "genre": "Mobile Entwicklung"
+            },
+            {
+                "product_id": 4570,
+                "price": 40,
+                "age": 495,
+                "sold": 15,
+                "in_maintenance": false,
+                "since_bugfix": 45,
+                "since_revision": 15,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 8096,
+                "price": 83,
+                "age": 492,
+                "sold": 20,
+                "in_maintenance": false,
+                "since_bugfix": 42,
+                "since_revision": 12,
+                "genre": "Sicherheitsentwicklung"
+            },
+            {
+                "product_id": 8000,
+                "price": 40,
+                "age": 491,
+                "sold": 12,
+                "in_maintenance": false,
+                "since_bugfix": 41,
+                "since_revision": 11,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 100,
+                "price": 48,
+                "age": 490,
+                "sold": 10,
+                "in_maintenance": false,
+                "since_bugfix": 40,
+                "since_revision": 10,
+                "genre": "Webentwicklung"
+            },
+            {
+                "product_id": 5512,
+                "price": 97,
+                "age": 147,
+                "sold": 28,
+                "in_maintenance": false,
+                "since_bugfix": 57,
+                "since_revision": 27,
+                "genre": "Webentwicklung"
+            },
+            {
+                "product_id": 458,
+                "price": 202,
+                "age": 141,
+                "sold": 36,
+                "in_maintenance": false,
+                "since_bugfix": 51,
+                "since_revision": 21,
+                "genre": "KI-Entwicklung"
+            },
+            {
+                "product_id": 7975,
+                "price": 121,
+                "age": 137,
+                "sold": 25,
+                "in_maintenance": false,
+                "since_bugfix": 47,
+                "since_revision": 17,
+                "genre": "Mobile Entwicklung"
+            },
+            {
+                "product_id": 8641,
+                "price": 97,
+                "age": 130,
+                "sold": 10,
+                "in_maintenance": false,
+                "since_bugfix": 40,
+                "since_revision": 10,
+                "genre": "Webentwicklung"
+            },
+            {
+                "product_id": 1507,
+                "price": 162,
+                "age": 130,
+                "sold": 13,
+                "in_maintenance": false,
+                "since_bugfix": 40,
+                "since_revision": 10,
+                "genre": "Sicherheitsentwicklung"
+            },
+            {
+                "product_id": 1052,
+                "price": 80,
+                "age": 123,
+                "sold": 6,
+                "in_maintenance": false,
+                "since_bugfix": 33,
+                "since_revision": 3,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 5495,
+                "price": 64,
+                "age": 120,
+                "sold": 51,
+                "in_maintenance": true,
+                "since_bugfix": 30,
+                "since_revision": 120,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 6426,
+                "price": 78,
+                "age": 120,
+                "sold": 30,
+                "in_maintenance": true,
+                "since_bugfix": 30,
+                "since_revision": 120,
+                "genre": "Webentwicklung"
+            },
+            {
+                "product_id": 3538,
+                "price": 78,
+                "age": 120,
+                "sold": 41,
+                "in_maintenance": true,
+                "since_bugfix": 30,
+                "since_revision": 120,
+                "genre": "Webentwicklung"
+            },
+            {
+                "product_id": 973,
+                "price": 90,
+                "age": 32,
+                "sold": 2,
+                "in_maintenance": false,
+                "since_bugfix": 2,
+                "since_revision": 32,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 5183,
+                "price": 90,
+                "age": 32,
+                "sold": 1,
+                "in_maintenance": false,
+                "since_bugfix": 2,
+                "since_revision": 32,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 3441,
+                "price": 135,
+                "age": 32,
+                "sold": 2,
+                "in_maintenance": false,
+                "since_bugfix": 2,
+                "since_revision": 32,
+                "genre": "Mobile Entwicklung"
+            },
+            {
+                "product_id": 4442,
+                "price": 90,
+                "age": 31,
+                "sold": 0,
+                "in_maintenance": false,
+                "since_bugfix": 1,
+                "since_revision": 31,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 1906,
+                "price": 100,
+                "age": 20,
+                "sold": 34,
+                "in_maintenance": false,
+                "since_bugfix": 20,
+                "since_revision": 20,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 1613,
+                "price": 200,
+                "age": 19,
+                "sold": 34,
+                "in_maintenance": false,
+                "since_bugfix": 19,
+                "since_revision": 19,
+                "genre": "Sicherheitsentwicklung"
+            },
+            {
+                "product_id": 2885,
+                "price": 100,
+                "age": 13,
+                "sold": 20,
+                "in_maintenance": false,
+                "since_bugfix": 13,
+                "since_revision": 13,
+                "genre": "Datenbankentwicklung"
+            },
+            {
+                "product_id": 1726,
+                "price": 200,
+                "age": 12,
+                "sold": 20,
+                "in_maintenance": false,
+                "since_bugfix": 12,
+                "since_revision": 12,
+                "genre": "Sicherheitsentwicklung"
+            },
+            {
+                "product_id": 9147,
+                "price": 120,
+                "age": 4,
+                "sold": 9,
+                "in_maintenance": false,
+                "since_bugfix": 4,
+                "since_revision": 4,
+                "genre": "Webentwicklung"
+            }
+        ]
+    },
+    "applicants": [
+        {
+            "pid": 8618,
+            "name": "Martinez",
+            "firstname": "Thomas",
+            "money": 64479,
+            "skill": 73,
+            "age": 3,
+            "motivation": 85,
+            "employment_duration": 0,
+            "skills": {
+                "webentwicklung": 50,
+                "mobile entwicklung": 39,
+                "datenbankentwicklung": 67,
+                "sicherheitsentwicklung": 64,
+                "ki-entwicklung": 14,
+                "allgemeine programmierung": 73
+            }
+        }
+    ],
+    "projects_pool": [],
+    "motivation_measure": null,
+    "sales_measure": {
+        "name": "Kunden-Feedback-Programm",
+        "sales_increase": 42,
+        "duration": 13
+    },
+    "sales_measure_duration": 0
+}

@@ -2,7 +2,7 @@
 import random
 
 class Person:
-    def __init__(self, pid, name, firstname, money, skill, age=0, motivation=None):
+    def __init__(self, pid, name, firstname, money, skill, age=0, motivation=None, employment_duration=0, skills=None):
         self.id = pid
         self.name = name
         self.firstname = firstname
@@ -10,9 +10,8 @@ class Person:
         self.skill = skill
         self.age = age
         self.motivation = random.randint(80, 95) if motivation is None else motivation
-        self.employment_duration = 0
-        self.skills = self.get_random_skills()
-        # Wenn CEO (ID -1), feste Skills setzen
+        self.employment_duration = employment_duration
+        self.skills = skills if skills is not None else self.get_random_skills()
         if self.id == -1:
             self.skills = {
                 "webentwicklung": 10,
@@ -42,9 +41,21 @@ class Person:
         self.motivation = min(100, max(0, self.motivation))
         return self.motivation
 
+#    def to_dict(self):
+#        return {
+#            "id": self.id,
+#            "name": self.name,
+#            "firstname": self.firstname,
+#            "money": self.money,
+#            "skill": self.skill,
+#            "age": self.age,
+#            "motivation": self.motivation,
+#            "employment_duration": self.employment_duration,
+#            "skills": self.skills
+#        }
     def to_dict(self):
         return {
-            "id": self.id,
+            "pid": self.id,  # Änderung hier: id -> pid
             "name": self.name,
             "firstname": self.firstname,
             "money": self.money,

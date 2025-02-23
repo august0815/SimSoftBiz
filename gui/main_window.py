@@ -1,5 +1,5 @@
 # gui/main_window.py
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets , uic
 from PyQt5.QtWidgets import QMainWindow, QMessageBox, QFileDialog, QDialog, QVBoxLayout, QPushButton, QLabel, QTextEdit, QMenu
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QColor
 from PyQt5.QtCore import Qt
